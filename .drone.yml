@@ -1,0 +1,18 @@
+kind: pipeline
+type: docker
+name: Cloud Custodian Audit
+
+steps:
+# validate is only for cfn policies.yml
+# - name: Validate policy.yml
+#   image: cloudcustodian/c7n:latest
+#   commands:
+#   - custodian validate mailer.yml
+
+- name: Run Mailer Update
+  image: cloudcustodian/mailer:latest
+  commands:
+  - c7n-mailer --config mailer.yml --update-lambda
+  when:
+    branch:
+    - main

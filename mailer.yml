@@ -1,0 +1,3 @@
+queue_url: https://sqs.us-east-1.amazonaws.com/472510080448/cloud-custodian
+role: arn:aws:iam::472510080448:role/sre-ec2-role-assumed
+from_address: dl-cc-cts-cloudops@compucom.com
